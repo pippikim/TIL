@@ -1,9 +1,10 @@
 # TIL
-Today I learned
-20180331
+###Today I learned
+##20180331
 
-Python
+###Python
 Hello! 
-
-*css
-*python
+  
+  *pyton
+  *java
+  
