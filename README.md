@@ -1,13 +1,13 @@
 # TIL
-###Today I learned
-##20180331
+### Today I learned
+## 20180331
 
-###Python
+### Python
 Hello! 
   
-  *pyton
-  *java
+  * pyton
+  * java
   
-##20180402
+## 20180402
 * list
 * class
