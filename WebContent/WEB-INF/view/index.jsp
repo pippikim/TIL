@@ -57,15 +57,12 @@
 var $deleteBtn = $("#groupDeleteBtn");
 
 $deleteBtn.click(function () {
-	
-	if(confirm("그룹 삭제시 소속가수들도 모두 삭제 됩니다")){
+	if(confirm("그룹 삭제시 소속 가수들도 모두 삭제 됩니다.")){
 		alert("삭제 되었습니다.");
 	}else{
-		alert("삭제가 취소되었습니다. ");
+		alert("삭제가 취소 되었습니다.");
 		return false;
-	}
-
-	});
+	}});
 
 </script>
 </body>

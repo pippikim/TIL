@@ -23,6 +23,7 @@ public class IdolController {
 	public void setGroupsService(GroupsService groupsService) {
 		this.groupsService = groupsService;
 	}
+	
 	public void setIdolsService(IdolsService idolsService) {
 		this.idolsService = idolsService;
 	}
