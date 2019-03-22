@@ -1,0 +1,78 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>genre form</title>
+</head>
+<body>
+<h1>genre form</h1>
+<form action="">
+<fieldset>
+	<legend>genre input form</legend>
+	<div>
+	<input placeholder="movie's title" />			
+	</div>
+	<div>
+	<input placeholder="director's name" />			
+	</div>
+	<div>
+		<h2>release date</h2>
+		<select>
+			<option>2019</option>
+			<option>2018</option>
+			<option>2017</option>
+		</select>
+		
+		<select>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+		</select>
+		<select>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+		</select>		
+	</div>
+	<div>
+		<h2>end date</h2>
+		<select>
+			<option>2019</option>
+			<option>2018</option>
+			<option>2017</option>
+		</select>
+		
+		<select>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+		</select>
+		<select>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+		</select>	
+	
+	</div>
+	<div>
+	<input placeholder="audience number" />			
+	</div>
+	<div>
+	<h2>genre</h2>
+	
+	<select>
+		<c:forEach items="${genres }" var="genre">
+		<option value="${genre.name }">${genre.name }</option>
+		</c:forEach>
+		</select>
+	
+	</div>
+	<button>input</button>
+</fieldset>
+
+
+</form>
+</body>
+</html>

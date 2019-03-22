@@ -1,0 +1,8 @@
+package vo;
+
+import java.io.Serializable;
+
+public class Group implements Serializable {
+	private int no;
+	private String name;
+}

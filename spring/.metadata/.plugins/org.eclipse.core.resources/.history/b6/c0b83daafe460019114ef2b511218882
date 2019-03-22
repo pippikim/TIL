@@ -1,0 +1,10 @@
+package dao;
+
+import org.apache.ibatis.session.SqlSession;
+
+public class PhonebookDAOImpl implements PhonebookDAO {
+	private SqlSession session;
+	public void setSession(SqlSession session) {
+		this.session = session;
+	}
+}

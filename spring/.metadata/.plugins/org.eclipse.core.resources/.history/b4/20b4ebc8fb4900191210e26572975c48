@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="groups">
+ 	<select id="selectList" resultType="vo.Group">
+ 		select g.no, g.name, g.agent, g.debut_date debutDate, g.profile , i.name idol ,g.regdate
+ 		from groups g, idols i
+ 		where g.no = i.group
+ 	</select>
+ 	
+  </mapper>

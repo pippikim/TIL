@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>   
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>전화번호부</title>
+</head>
+<body>
+<table border="1">
+	<thead>
+		<tr>
+			<th>no</th>
+			<th>name</th>
+			<th>phone number</th>
+			<th>gender</th>		
+			<th>age</th>
+		</tr>
+	</thead>
+	<tbody>
+	<c:forEach items="${phonebook }" var="phone">
+		<tr>
+			<td>1</td>
+			<td>kimdabin</td>
+			<td>01043001117</td>
+			<td>Female</td>
+			<td>27</td>
+		</tr>
+	
+	</c:forEach>
+	
+	</tbody>
+
+</table>
+</body>
+</html>

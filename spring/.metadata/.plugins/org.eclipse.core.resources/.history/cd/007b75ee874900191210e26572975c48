@@ -1,0 +1,11 @@
+package vo;
+
+import java.io.Serializable;
+import java.sql.Date;
+
+public class Idol implements Serializable {
+	private int no;
+	private String name;
+	private Date birthDate;
+	
+}

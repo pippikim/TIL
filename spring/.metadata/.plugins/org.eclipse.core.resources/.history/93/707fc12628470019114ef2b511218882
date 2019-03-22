@@ -1,0 +1,48 @@
+package controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import service.MoviesService;
+
+@Controller
+public class MovieController {
+	private MoviesService moviesService;
+	public void setMoviesService(MoviesService moviesService) {
+		this.moviesService = moviesService;
+	}
+	
+	@RequestMapping("/movieList.html")
+	public void movieList(Model model) {
+		model.addAttribute("movies", moviesService.getList());
+	}
+	
+	@RequestMapping("/movie.html")
+	public String movie(Model model, int no) {
+		//System.out.println("no:"+ no);
+		model.addAttribute("movie", moviesService.getMovie(no));
+		
+		return "movieDetail";
+	}
+	@RequestMapping("/deleteMovie.html")
+	public String deleteMovie(int no) {
+		moviesService.remove(no);
+		return "redirect:/movieList.html";
+	}
+	@RequestMapping(value="/movieInsert.html",method=RequestMethod.GET)
+	public String movieinsertForm(Model model) {
+		
+		model.addAttribute("genres", moviesService.getGenres());
+		return "movieForm";
+	}
+	
+	@RequestMapping(value="/movieInsert.html",method=RequestMethod.POST)
+	public String movieinsertForm() {//실제로 insert 되는 
+		return "redirect:/movieList.html";
+	}
+	
+}

@@ -1,0 +1,10 @@
+package vo;
+
+import java.io.Serializable;
+import java.sql.Timestamp;
+
+public class Group implements Serializable {
+	private int no;
+	private String name;
+	private Timestamp
+}

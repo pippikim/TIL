@@ -1,0 +1,11 @@
+package service;
+
+import dao.GroupsDAO;
+
+public class GroupsServiceImpl implements GroupsService {
+	
+	private GroupsDAO groupsDAO;
+	
+	
+		
+}

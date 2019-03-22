@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.3.xsd">
+<!-- 
+	M : model -> view에 출력되는 data 
+	V : jps view / redirect view / json view 
+	C : Controller 어떤 data를 어떤 view에 출력할지 결
+
+ -->
+ 
+ <!-- WAS가 생성한 ConnectionPool을 jndi -->
+	<jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/mariadb" />
+	<!-- ConnectionPool(DataSource)설정 -->
+
+<!-- SqlSessionFactory 설정 -->
+<bean id="sqlSessionFactory"
+p:dataSource-ref="dataSource"
+p:configLocation="/WEB-INF/mybatis-config.xml"
+class="org.mybatis.spring.SqlSessionFactoryBean"/>
+
+<!-- SqlSession 설정 -->
+<bean id="sqlSession"
+ c:sqlSessionFactory-ref="sqlSessionFactory"
+ class="org.mybatis.spring.SqlSessionTemplate"/>
+<!-- DAO 설정 -->
+
+<!-- service 설정 -->
+<bean id="genresService" p:genresDAO-ref="genresDAO" class="service.GenresServiceImpl" />
+<bean class="service.MoviesServiceImpl" id="moviesService" p:moviesDAO-ref="moviesDAO"/>
+
+</beans>

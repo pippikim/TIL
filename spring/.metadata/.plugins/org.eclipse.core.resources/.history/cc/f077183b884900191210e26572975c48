@@ -1,0 +1,17 @@
+package vo;
+
+import java.io.Serializable;
+import java.sql.Date;
+import java.sql.Timestamp;
+
+public class Idol implements Serializable {
+	private int no, group;
+	private String name, profile;
+	private Date birthDate;
+	private Timestamp regdate;
+	
+	public Idol() {
+		// TODO Auto-generated constructor stub
+	}
+	
+}

@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>genre form</title>
+</head>
+<body>
+<h1>genre form</h1>
+<form action="">
+<fieldset>
+	<legend>genre input form</legend>
+	<div>
+	<input placeholder="genre's title" />			
+	</div>
+	<button>input</button>
+</fieldset>
+
+
+</form>
+</body>
+</html>

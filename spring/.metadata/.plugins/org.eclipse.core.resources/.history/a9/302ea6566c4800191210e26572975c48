@@ -1,0 +1,16 @@
+package vo;
+
+import java.io.Serializable;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
+
+public class Movie implements Serializable {
+	private int no, audienceNum, genre;
+	private String name, director;
+	private Date releaseDate, endDate;
+	public Movie() {
+		// TODO Auto-generated constructor stub
+	}
+	
+}

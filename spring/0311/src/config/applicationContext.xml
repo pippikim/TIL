@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!-- ConnectionPool(DataSource)설정 -->
+<bean 
+id="dataSource"
+p:username="testdb"
+p:password="1111"
+p:driverClassName="com.mysql.cj.jdbc.Driver"
+p:url="jdbc:mysql://localhost:3306/testdb?serverTimezone=Asia/Seoul"
+class="org.springframework.jdbc.datasource.DriverManagerDataSource"/>
+
+<!-- SqlSessionFactory 설정 -->
+<bean id="sqlSessionFactory"
+p:dataSource-ref="dataSource"
+p:configLocation="config/mybatis-config.xml"
+class="org.mybatis.spring.SqlSessionFactoryBean"/>
+
+<!-- SqlSession 설정 -->
+<bean id="sqlSession"
+ c:sqlSessionFactory-ref="sqlSessionFactory"
+ class="org.mybatis.spring.SqlSessionTemplate"/>
+<!-- DAO 설정 -->
+<bean id="genresDAO" p:session-ref="sqlSession" class="dao.GenresDAOImpl"/>
+<bean class="dao.MoviesDAOImpl" id="moviesDAO" p:session-ref="sqlSession"/>
+<!-- service 설정 -->
+<bean id="genresService" p:genresDAO-ref="genresDAO" class="service.GenresServiceImpl" />
+<bean class="service.MoviesServiceImpl" id="moviesService" p:moviesDAO-ref="moviesDAO"/>
+
+</beans>

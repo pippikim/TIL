@@ -1,0 +1,27 @@
+package service;
+
+import java.util.List;
+
+import dao.IdolsDAO;
+import vo.Idol;
+
+public class IdolsServiceImpl implements IdolsService{
+
+	private IdolsDAO idolsDAO;
+	
+	public void setIdolsDAO(IdolsDAO idolsDAO) {
+		this.idolsDAO = idolsDAO;
+	}
+	
+	@Override
+	public List<Idol> getList(int groupNo) {
+		// TODO Auto-generated method stub
+		return idolsDAO.selectList(groupNo);
+	}
+	
+	@Override
+	public Idol getIdol(int no) {
+		// TODO Auto-generated method stub
+		return idolsDAO.selectOne(no);
+	}
+}

@@ -1,0 +1,172 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+ <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+ <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Group Insert Form</title>
+</head>
+<body>
+<h1>그룹 ${status } 하기</h1>
+<c:choose>
+<c:when test="${empty group }">
+<form id="groupForm" action="/insertGroup.html" enctype="multipart/form-data" method="post">
+<fieldset>
+	<legend>그룹 ${status } 폼</legend>
+	
+	<div>
+	<input type="file" name="image" />	
+	</div>
+	<div>
+	<input name="name" placeholder="group's name" />			
+	</div>
+	<div>
+	<input name="agent" placeholder="group's agent" />			
+	</div>
+	<div>
+		<h2>debut date</h2>
+		<select class="year" id="debutYear" >
+		</select>
+		
+		<select class="month" id="debutMonth">
+		</select>
+		<select class="day" id="debutDay">
+		</select>		
+	</div>
+	<input id="debutDate" name="debutDate" type="hidden" />
+
+</c:when>
+
+<c:otherwise>
+<form id="groupForm" action="/updateGroup.html?no=${group.no }" enctype="multipart/form-data" method="post">
+<fieldset>
+	<legend>그룹 ${status } 폼</legend>
+	
+	<div>
+	<input type="file" name="image"  />	
+	</div>
+	<div>
+	<input name="name" placeholder="group's name" value="${group.name }" />			
+	</div>
+	<div>
+	<input name="agent" placeholder="group's agent" value="${group.agent }"/>			
+	</div>
+	<div>
+		<h2>debut date</h2>
+		<fmt:formatDate value="${group.debutDate }" var="year"  pattern="yyyy" />
+		<fmt:formatDate value="${group.debutDate }" var="month"  pattern="MM" />
+		<fmt:formatDate value="${group.debutDate }" var="day"  pattern="dd" />
+		
+		<select data-year="${year }" class="year" id="debutYear" >
+		</select>
+		
+		<select data-month="${month }" class="month" id="debutMonth">
+		</select>
+		<select data-day="${day }" class="day" id="debutDay">
+		</select>		
+	</div>
+	<input id="debutDate" name="debutDate" type="hidden" />
+
+</c:otherwise>
+
+</c:choose>
+	
+	<button>input</button>
+</fieldset>
+
+</form>
+
+<a href="/index.html">그룹 목록 </a>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+<script type="text/javascript">
+var $year = $("#debutYear");
+var $month = $("#debutMonth");
+var $day = $("#debutDay");
+var now = moment();
+var year = now.year();
+var month = now.month();
+var $debutDate = $("#debutDate");
+
+console.log(year+" "+month);
+
+//alert(now);
+
+ appendYear();
+ appendMonth();
+ appendDay();
+
+ 
+
+ function selectDebutDate() {	
+		var debutDate = $year.val()+"-"+$month.val()+"-"+$day.val();
+		$debutDate.val(debutDate);
+	} 
+
+		$("#groupForm").submit(function() {
+			selectDebutDate();
+		});
+
+var selectedYear  = $year.attr("data-year");
+
+
+function appendYear(){
+	 console.log($year.attr("data-year"));
+	 var selectedYear = $year.attr("data-year");
+	 
+	 for(var i= now.year(); i>1910; i--){
+		 if(selectedYear!=null&&i==selectedYear){
+			 $year.append("<option selected>"+i+"</option>");
+		 }else{
+		 $year.append("<option>"+i+"</option>");}
+		 
+	 }
+}//appendYear() end
+function appendMonth(){
+	
+	var selectedMonth = $month.attr("data-month");
+	
+	 for(var i=1; i<13; i++){
+		 if(selectedMonth!=null&&i==selectedMonth){
+			 $month.append("<option selected>"+i+"</option>");
+		 }else{
+		 $month.append("<option>"+i+"</option>");}
+	 }
+}//appendMonth() end
+
+function appendDay(){
+	
+	$day.empty();
+	 var that =  moment([year,month-1]); //해당하는 년월일의 첫
+	// alert(that.endOf("month"));
+	 var selectedDay = $day.attr("data-day");
+	 console.log("day "+ month );
+	 for(var i=1; i<=that.endOf("month").date(); i++){
+		 if(selectedDay!=null&&selectedDay==i){
+			 $day.append("<option selected >"+i+"</option>");}
+		 else{
+		 $day.append("<option>"+i+"</option>");}
+	 }
+}//appendDay() end
+
+
+$year.change(function() {
+	year = this.value;
+	console.log(month);
+	appendDay();
+});
+
+$month.change(function() {
+	 month = this.value;
+	 appendDay();
+	 
+})
+
+
+
+
+</script>
+</body>
+</html>

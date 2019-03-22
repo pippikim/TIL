@@ -1,0 +1,76 @@
+package vo;
+
+import java.io.Serializable;
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.List;
+
+
+public class Group implements Serializable {
+	private int no;
+	private String name, agent, profile;
+	private List<String> idols;
+	private Timestamp regdate;
+	private Date debutDate;
+	
+	public Group() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public List<String> getIdols() {
+		return idols;
+	}
+	public void setIdols(List<String> idols) {
+		this.idols = idols;
+	}
+	
+	public int getNo() {
+		return no;
+	}
+
+	public void setNo(int no) {
+		this.no = no;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAgent() {
+		return agent;
+	}
+
+	public void setAgent(String agent) {
+		this.agent = agent;
+	}
+
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
+	
+	public String getProfile() {
+		return profile;
+	}
+	
+	public Timestamp getRegdate() {
+		return regdate;
+	}
+
+	public void setRegdate(Timestamp regdate) {
+		this.regdate = regdate;
+	}
+
+	public Date getDebutDate() {
+		return debutDate;
+	}
+
+	public void setDebutDate(Date debutDate) {
+		this.debutDate = debutDate;
+	}
+	
+	
+}

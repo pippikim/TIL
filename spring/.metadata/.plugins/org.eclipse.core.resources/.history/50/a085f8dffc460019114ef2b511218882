@@ -1,0 +1,10 @@
+package vo;
+
+import java.io.Serializable;
+import java.sql.Date;
+
+public class Phone implements Serializable {
+	private int no;
+	private String name,phone,gender;
+	private Date birthDate;
+}

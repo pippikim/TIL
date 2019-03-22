@@ -1,0 +1,11 @@
+package dao;
+
+import org.apache.ibatis.session.SqlSession;
+
+public class GroupsDAOImpl implements GroupsDAO {
+	private SqlSession session;
+	
+	public void setSession(SqlSession session) {
+		this.session = session;
+	}
+}

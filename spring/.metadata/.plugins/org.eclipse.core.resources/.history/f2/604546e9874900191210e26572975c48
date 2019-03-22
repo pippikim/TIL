@@ -1,0 +1,8 @@
+package vo;
+
+import java.io.Serializable;
+
+public class Idol implements Serializable {
+	private int no;
+	private String name;
+}

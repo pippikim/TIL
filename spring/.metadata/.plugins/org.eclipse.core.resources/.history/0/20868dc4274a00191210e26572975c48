@@ -1,0 +1,29 @@
+package service;
+
+import java.util.List;
+
+import dao.GroupsDAO;
+import vo.Group;
+
+public class GroupsServiceImpl implements GroupsService {
+	
+	private GroupsDAO groupsDAO;
+	
+	public void setGroupsDAO(GroupsDAO groupsDAO) {
+		this.groupsDAO = groupsDAO;
+	}
+	@Override
+	public List<Group> getList() {
+		// TODO Auto-generated method stub
+		return groupsDAO.selectList();
+	}
+	@Override
+	public boolean register(Group group) {
+		// TODO Auto-generated method stub
+		if(groupsDAO.insert(group)) {
+			return true;
+		}
+		
+		return false;
+	}
+}

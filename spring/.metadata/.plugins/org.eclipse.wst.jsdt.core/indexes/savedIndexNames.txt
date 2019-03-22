@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+/Users/kimdabin/db/workspace/spring/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3025936295.index
+2750848176.index
+2356406705.index
+3186250636.index
+1564885117.index
+3695724015.index
+708348420.index
+3834384592.index

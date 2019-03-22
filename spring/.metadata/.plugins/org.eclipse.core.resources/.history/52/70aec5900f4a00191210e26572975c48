@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+<!--applicationContext.xml String형을 Date형으로 자동 형변환 -->
+<mvc:annotation-driven></mvc:annotation-driven>
+
+<mvc:view-resolvers>
+	<mvc:jsp prefix="/WEB-INF/view/" suffix=".jsp"/>
+
+</mvc:view-resolvers>
+<!-- Controller -->
+<bean class="controller.GroupController" id="groupController" p:groupsService-ref="groupsService"
+p:idolsSerivce-ref="idolsService"
+/>
+<bean class="controller.IdolController"/>
+</beans>

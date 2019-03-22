@@ -1,0 +1,16 @@
+package controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import service.PhonebookService;
+
+@Controller
+public class PhoneController {
+	PhonebookService phonebookService;
+	
+	@RequestMapping("/index.html")
+	public void phonebook() {
+		
+	}
+}

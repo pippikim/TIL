@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="groups">
+ 	<select id="selectList" resultType="vo.Group">
+ 		select g.no, g.name, g.agent, g.debut_date debutDate, g.profile , g.regdate
+ 		from groups g
+ 		order by 1
+ 	</select>
+ 	<select></select>
+ 	
+ 	<insert id="insert" parameterType="vo.Group">
+ 		insert into groups(name, agent, debut_date, profile)
+ 		values(#{name}, #{agent}, #{debutDate}, #{profile} )
+ 	</insert>
+ 	<delete id="delete" parameterType="int">
+ 		delete from groups
+ 		where no =#{no}
+ 	</delete>
+ 	
+ 	<update id="update" parameterType="vo.Group">
+ 		update groups
+ 		set name=#{name}, agent=#{agent}, debut_date=#{debutDate}, profile=#{profile}
+ 		where no=#{no}
+ 	
+ 	</update>
+  </mapper>

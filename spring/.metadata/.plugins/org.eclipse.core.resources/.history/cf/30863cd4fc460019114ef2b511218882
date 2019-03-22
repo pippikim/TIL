@@ -1,0 +1,8 @@
+package vo;
+
+import java.io.Serializable;
+
+public class Phone implements Serializable {
+	private int no;
+	private String name,phone,gender;
+}

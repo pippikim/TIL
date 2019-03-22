@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="idols">
+  	<insert id="insert" parameterType="vo.Idol" keyProperty="no">
+  		insert into idols(name, birth_date, group_no, profile)
+  		values(#{name}, #{birthDate}, #{groupNo}, #{profile} )
+  	</insert>
+  
+ 	<select id="selectList" resultType="vo.Idol">
+ 		select i.no, i.name, i.birth_date birthDate, i.group_no groupNo, i.profile, i.regdate
+ 		from idols i, groups g
+ 		where i.group_no = g.no
+ 		order by 1
+ 	</select>
+	<select id="selectSearch" resultType="vo.Idol" parameterType="int">
+ 		select i.no, i.name, i.birth_date birthDate, i.group_no groupNo, i.profile, 
+ 		i.regdate, g.agent agent, g.name groupName
+ 		from idols i, groups g
+ 		where i.group_no= g.no and i.no=#{no} 
+ 		order by 1
+ 	</select> 	
+ 	
+ 	<select id="selectOne" resultType="vo.Idol" parameterType="int">
+ 		select i.no, i.name, i.birth_date birthDate, i.group_no groupNo, i.profile, 
+ 		i.regdate, g.agent agent, g.name groupName
+ 		from idols i, groups g
+ 		where i.group_no= g.no and i.no=#{no} 
+ 		order by 1
+ 	</select>
+ 	
+  </mapper>

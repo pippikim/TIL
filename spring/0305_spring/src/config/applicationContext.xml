@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 
+<bean id="person" class="vo.Person" >
+	<constructor-arg  value="kimdabin"></constructor-arg>
+		<constructor-arg value="159"></constructor-arg>
+			<constructor-arg value="50"></constructor-arg>
+</bean>
+
+ 
+ 
+ <bean id="person" class="vo.Person" c:name="kimdabin" c:height="170" c:weight="50"/>
+
+
+<bean id="person" class="vo.Person">
+	<property name="name" value="kimdb"></property>
+</bean>
+-->
+<bean id="person" class="vo.Person"
+p:name="kimdb" p:height="178" p:weight="55"
+/>
+
+<bean id="person2" class="vo.Person"
+p:name="kimpg" p:height="178" p:weight="55"
+/>
+
+<bean id="printer" class="printer.PersonPrinterKO" p:person-ref="person2" />
+
+</beans>

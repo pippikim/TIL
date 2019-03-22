@@ -1,0 +1,10 @@
+//com.springsource.config.ui.prefs.activePageIndex\:/0305_spring/src/config/applicationContext.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/0311/src/config/applicationContext.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/0313/WebContent/WEB-INF/applicationContext.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/0313/WebContent/WEB-INF/hello-servlet.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/0314/WebContent/WEB-INF/applicationContext.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/0314/WebContent/WEB-INF/hello-servlet.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage id\="com.springsource.sts.config.ui.editors.namespaces" index\="1" kind\="formPage"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/0314/WebContent/WEB-INF/model2-servlet.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/0318/WebContent/WEB-INF/applicationContext.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/0318/WebContent/WEB-INF/model2-servlet.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+eclipse.preferences.version=1

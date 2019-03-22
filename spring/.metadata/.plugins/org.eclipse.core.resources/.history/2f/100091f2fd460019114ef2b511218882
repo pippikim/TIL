@@ -1,0 +1,7 @@
+package service;
+
+import dao.PhonebookDAO;
+
+public class PhonebookServiceImpl implements PhonebookService {
+	private PhonebookDAO phonebookDAO;
+}

@@ -1,0 +1,11 @@
+package service;
+
+import dao.IdolsDAO;
+
+public class IdolsServiceImpl implements IdolsService{
+
+	private IdolsDAO idolsDAO;
+	public void setIdolsDAO(IdolsDAO idolsDAO) {
+		this.idolsDAO = idolsDAO;
+	}
+}
