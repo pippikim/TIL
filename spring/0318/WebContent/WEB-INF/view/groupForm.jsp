@@ -10,43 +10,24 @@
 </head>
 <body>
 <h1>그룹 ${status } 하기</h1>
+
+<form id="groupForm" action="/group" ${group==null? 'enctype="multipart/form-data"': '' }  method="post">
+
+
+<fieldset>
+	<legend>그룹 ${status } 폼</legend>
 <c:choose>
-<c:when test="${empty group }">
-<form id="groupForm" action="/insertGroup.html" enctype="multipart/form-data" method="post">
-<fieldset>
-	<legend>그룹 ${status } 폼</legend>
-	
-	<div>
-	<input type="file" name="image" />	
-	</div>
-	<div>
-	<input name="name" placeholder="group's name" />			
-	</div>
-	<div>
-	<input name="agent" placeholder="group's agent" />			
-	</div>
-	<div>
-		<h2>debut date</h2>
-		<select class="year" id="debutYear" >
-		</select>
-		
-		<select class="month" id="debutMonth">
-		</select>
-		<select class="day" id="debutDay">
-		</select>		
-	</div>
-	<input id="debutDate" name="debutDate" type="hidden" />
-
+<c:when test="${group!=null }">
+<input type="hidden" name= "_method" value="PUT" />
+<input type="hidden" name="no" value="${group.no }" />
 </c:when>
-
 <c:otherwise>
-<form id="groupForm" action="/updateGroup.html?no=${group.no }" enctype="multipart/form-data" method="post">
-<fieldset>
-	<legend>그룹 ${status } 폼</legend>
-	
-	<div>
-	<input type="file" name="image" />	
+	 <div>
+	<input type="file" name="image"/>	
 	</div>
+</c:otherwise>
+</c:choose>
+
 	<div>
 	<input name="name" placeholder="group's name" value="${group.name }" />			
 	</div>
@@ -69,16 +50,13 @@
 	</div>
 	<input id="debutDate" name="debutDate" type="hidden" />
 
-</c:otherwise>
-
-</c:choose>
 	
 	<button>input</button>
 </fieldset>
 
 </form>
 
-<a href="/index.html">그룹 목록 </a>
+<a href="/group">그룹 목록 </a>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
 <script type="text/javascript">
@@ -113,7 +91,7 @@ var $debutDate = $("#debutDate");
 
 function appendYear(){
 	 var selectedYear = $year.attr("data-year");
-	 if(selectedYear!=null) year=selectedYear;
+	 if(selectedYear.length>0) year=selectedYear;
 	 
 	 for(var i= now.year(); i>1910; i--){
 		 if(selectedYear!=null&&i==selectedYear){
@@ -126,7 +104,7 @@ function appendYear(){
 function appendMonth(){
 	
 	var selectedMonth = $month.attr("data-month");
-	if(selectedMonth!=null) month = selectedMonth;
+	if(selectedMonth.length>0) month = selectedMonth;
 	
 	 for(var i=1; i<13; i++){
 		 if(selectedMonth!=null&&i==selectedMonth){
@@ -142,6 +120,7 @@ function appendDay(){
 	 var that =  moment([year,month-1]); //해당하는 년월일의 첫
 	// alert(that.endOf("month"));
 	 var selectedDay = $day.attr("data-day");
+	
 	 for(var i=1; i<=that.endOf("month").date(); i++){
 		 if(selectedDay!=null&&selectedDay==i){
 			 $day.append("<option selected >"+i+"</option>");}

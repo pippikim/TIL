@@ -25,16 +25,16 @@
 <li>그룹 <span>${idol.groupName } </span></li>
 <li>소속사 <span>${idol.agent }</span></li>
 <li>
-<a href="/deleteIdol.html?no=${idol.no }">${idol.name } 삭제</a>
+<a href="/deleteIdol.db?no=${idol.no }">${idol.name } 삭제</a>
 </li>
 <li>
 
-<a href="/updateIdol.html?no=${idol.no }">${idol.name } 수정 </a>
+<a href="/updateIdol.db?no=${idol.no }">${idol.name } 수정 </a>
 </li>
 
 </ul>
 
-<a href="/index.html"> 그룹 목록 </a>
+<a href="/index.db"> 그룹 목록 </a>
 </div>
 </body>
 </html>

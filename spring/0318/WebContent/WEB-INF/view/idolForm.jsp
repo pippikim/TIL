@@ -12,7 +12,7 @@
 	<h1>아이돌 ${status } 하기</h1>
 	<c:choose>
 		<c:when test="${empty idol }">
-		<form id="idolForm" action="/insertIdol.html" accept-charset="UTF-8"
+		<form id="idolForm" action="/insertIdol.db" accept-charset="UTF-8"
 enctype="multipart/form-data" method="post">
 <fieldset>
 	<legend>아이돌 ${status } 폼</legend>
@@ -55,7 +55,7 @@ enctype="multipart/form-data" method="post">
 		</c:when>
 		<c:otherwise>
 		
-		<form id="idolForm" action="/updateIdol.html?no=${idol.no }" accept-charset="UTF-8"
+		<form id="idolForm" action="/updateIdol.db?no=${idol.no }" accept-charset="UTF-8"
 enctype="multipart/form-data" method="post">
 <fieldset>
 	<legend>아이돌 ${status } 폼</legend>
@@ -108,7 +108,7 @@ enctype="multipart/form-data" method="post">
 
 </form>
 
-<a href="/index.html">그룹 목록 </a>
+<a href="/index.db">그룹 목록 </a>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>

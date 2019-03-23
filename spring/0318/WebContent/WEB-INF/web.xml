@@ -12,7 +12,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>model2</servlet-name>
-    <url-pattern>*.html</url-pattern>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
   <!-- post 방식의 한글처리 필터  -->
   <filter>
@@ -27,7 +27,8 @@
     <filter-name>encoding</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-  <!-- 
+ 
+ <!-- put, delete를 처리해주는 필터  -->
   <filter>
     <filter-name>httpMethodFilter</filter-name>
     <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
@@ -36,7 +37,8 @@
     <filter-name>httpMethodFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-  
+
+<!--  
   <error-page>
      <error-code>404</error-code>
      <location>/WEB-INF/view/error.jsp</location>

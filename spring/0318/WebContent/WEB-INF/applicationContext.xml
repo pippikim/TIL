@@ -33,7 +33,8 @@ class="org.mybatis.spring.SqlSessionFactoryBean"/>
 
 <!-- service 설정 -->
 <bean class="service.GroupsServiceImpl" id="groupsService" p:groupsDAO-ref="groupsDAO"
-p:idolsDAO-ref="idolsDAO"
-/>
+p:idolsDAO-ref="idolsDAO"  />
 <bean class="service.IdolsServiceImpl" id="idolsService" p:idolsDAO-ref="idolsDAO"/>
+
+<bean class="util.FileUploadUtil" id="fileUploadUtil" />
 </beans>
