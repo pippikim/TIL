@@ -10,14 +10,16 @@
 
 <mvc:view-resolvers>
 	<mvc:jsp prefix="/WEB-INF/view/" suffix=".jsp"/>
-
 </mvc:view-resolvers>
+<!--  -->
+<mvc:resources location="/upload/" mapping="/upload/**"></mvc:resources>
+<mvc:resources location="/js/" mapping="/js/**"></mvc:resources>
 <!-- Controller -->
 <bean class="controller.GroupController" id="groupController" p:groupsService-ref="groupsService"
-p:idolsSerivce-ref="idolsService"
+p:idolsSerivce-ref="idolsService" p:fileUploadUtil-ref="fileUploadUtil"
 />
 <bean class="controller.IdolController" id="idolController" p:idolsService-ref="idolsService"
-p:groupsService-ref="groupsService"
+p:groupsService-ref="groupsService" p:fileUploadUtil-ref="fileUploadUtil"
 />
 
 <bean id="multipartResolver" 

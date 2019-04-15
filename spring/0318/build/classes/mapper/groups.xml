@@ -13,7 +13,7 @@
  		from groups 
  	where no = #{no}
  	</select>
- 	
+ 		
  	<insert id="insert" parameterType="vo.Group">
  		insert into groups(name, agent, debut_date, profile)
  		values(#{name}, #{agent}, #{debutDate}, #{profile} )
@@ -25,7 +25,7 @@
  	
  	<update id="update" parameterType="vo.Group">
  		update groups
- 		set name=#{name}, agent=#{agent}, debut_date=#{debutDate}, profile=#{profile}
+ 		set name=#{name}, agent=#{agent}, debut_date=#{debutDate}
  		where no=#{no}
  	
  	</update>

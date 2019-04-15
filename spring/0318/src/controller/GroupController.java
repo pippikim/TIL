@@ -8,12 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import service.GroupsService;
 import service.IdolsService;
+import util.FileUploadUtil;
 import vo.Group;
 import vo.Idol;
 
@@ -22,6 +24,7 @@ public class GroupController {
 	
 	private GroupsService groupsService;
 	private IdolsService idolsSerivce;
+	private FileUploadUtil fileUploadUtil;
 	
 	public void setIdolsSerivce(IdolsService idolsSerivce) {
 		this.idolsSerivce = idolsSerivce;
@@ -31,28 +34,15 @@ public class GroupController {
 		this.groupsService = groupsService;
 	}
 	
-	public static String uploadImg(HttpServletRequest request, MultipartFile image) {
-		String root  = request.getServletContext().getRealPath("/");
-		System.out.println("root: "+root);
-		String uploadPath = root+"upload"+File.separator;
-		System.out.println("uploadPath: "+uploadPath);
-		String uuid = UUID.randomUUID().toString();
-		System.out.println("uuid: "+uuid);
-		String original = image.getOriginalFilename();
-		String exe = original.substring(original.indexOf("."));
-		File file = new File(uploadPath+uuid+exe);
-		
-		try {
-			image.transferTo(file);
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-		return uuid+exe;
+	public void setFileUploadUtil(FileUploadUtil fileUploadUtil) {
+		this.fileUploadUtil = fileUploadUtil;
 	}
 	
-	@RequestMapping(value="/updateGroup.html", method=RequestMethod.GET)
-	public String updateForm(int no, Model model) {
+	
+	@RequestMapping(value="/group/update/{no}", method=RequestMethod.GET)
+	public String updateForm(@PathVariable int no, Model model) {
+		
+		//@PathVariable : Url 경로 안에 있는 변수를 받아오는 것
 		model.addAttribute("status", "수정");
 		model.addAttribute("group", groupsService.getGroup(no));
 		
@@ -60,35 +50,26 @@ public class GroupController {
 		return "groupForm";
 	}
 	
-	@RequestMapping(value="/updateGroup.html", method=RequestMethod.POST)
-	public String update(Group group,HttpServletRequest request, MultipartFile image) {
-		System.out.println(image.getOriginalFilename());
-		
-	
-		if(image.getOriginalFilename()!="") {
-			System.out.println("들어옴 "+image.getOriginalFilename());
-		String imgName = uploadImg(request, image);
-		System.out.println("imge name "+imgName);
-		group.setProfile("/upload/"+imgName); 
-		}else {
-			//System.out.println(groupsService.getGroup(group.getNo()).getProfile());
-			group.setProfile(groupsService.getGroup(group.getNo()).getProfile());
-		}
+	@RequestMapping(value="/group", method=RequestMethod.PUT)
+	public String update(Group group) {
 		
 		groupsService.update(group);
 		
-		return "redirect:/index.html";
+		return "redirect:/group";
 	}
 	
-	@RequestMapping("/deleteGroup.html")
-	public String delete(int no) {
+	@RequestMapping(value="/group/${no}", method=RequestMethod.DELETE)
+	public String delete(@PathVariable int no) {
 		groupsService.remove(no);
-		
-		return "redirect:/index.html";
+		return "redirect:/group";
+	}
+	@RequestMapping(value= {"/","index.html"})
+	public String index() {
+		return "redirect:/group";
 	}
 	
-	@RequestMapping("/index.html")
-	public void groupPage(Model model ) {
+	@RequestMapping("/group")
+	public String groupPage(Model model ) {
 		List<Group> groups = groupsService.getList();
 		List<Idol> idols = null;
 		
@@ -98,22 +79,21 @@ public class GroupController {
 			idols =  idolsSerivce.getList();
 				model.addAttribute("idols",idols);	
 		
-
-	
+		return "index";
 		
 	}
-	@RequestMapping(value="/insertGroup.html", method=RequestMethod.GET)
+	@RequestMapping(value="/group/insert", method=RequestMethod.GET)
 	public String insertForm(Model model) {
 		model.addAttribute("status","등록");
 		return "groupForm";
 	}
-	@RequestMapping(value="/insertGroup.html", method=RequestMethod.POST)
+	@RequestMapping(value="/group", method=RequestMethod.POST)
 	public String insertGroup(HttpServletRequest request, MultipartFile image, Group group ) {
-		String imageName = uploadImg(request, image);
+		String imageName = fileUploadUtil.uploadImg(request, image);
 		group.setProfile("/upload/"+imageName); 
 		groupsService.register(group);
 		
-		return "redirect:/index.html";
+		return "redirect:/group";
 	}
 	
 }

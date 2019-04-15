@@ -1,4 +1,4 @@
 #Tomcat publish data
-#Thu Mar 21 22:17:44 KST 2019
-org.eclipse.jst.jee.server\:/binary\:/Users/kimdabin/db/workspace/spring/0313/WebContent/WEB-INF/lib/spring-web-5.1.2.RELEASE.jar=/usr/local/Cellar/tomcat@8/8.5.37/libexec/wtpwebapps/0313/WEB-INF/lib/spring-web-5.1.2.RELEASE.jar
-org.eclipse.jst.jee.server\:0313=/usr/local/Cellar/tomcat@8/8.5.37/libexec/wtpwebapps/0313
+#Fri Mar 22 18:42:09 KST 2019
+org.eclipse.jst.jee.server\:/binary\:/Users/kimdabin/db/workspace/spring/0318/WebContent/WEB-INF/lib/spring-web-5.1.2.RELEASE.jar=/usr/local/Cellar/tomcat@8/8.5.37/libexec/wtpwebapps/0318/WEB-INF/lib/spring-web-5.1.2.RELEASE.jar
+org.eclipse.jst.jee.server\:0318=/usr/local/Cellar/tomcat@8/8.5.37/libexec/wtpwebapps/0318

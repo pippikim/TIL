@@ -47,4 +47,13 @@
  		order by 1
  	</select>
  	
+ 	<select id="searchIdol" resultType="vo.Idol" parameterType="string">
+ 	   select i.no, i.name, i.birth_date birthDate, i.group_no groupNo, i.profile, 
+ 		i.regdate, g.agent agent, g.name groupName
+ 		from idols i, groups g
+ 		where i.group_no= g.no and i.name like #{name}
+ 		order by 1
+ 	
+ 	</select>
+ 	
   </mapper>
