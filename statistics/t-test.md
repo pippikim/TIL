@@ -1,10 +1,6 @@
 ---
-typora-copy-images-to: ./img
+typora-copy-images-to: ipic
 ---
-
-
-
-
 
 ## 정규모집단의 평균추론
 
@@ -36,14 +32,14 @@ typora-copy-images-to: ./img
 
 #### 표준정규분포와 스튜던트 t 분포
 
-![image-20190420051205080](/Users/kimdabin/db/git-dir/TIL/statistics/img/image-20190420051205080.png)
+![image-20190420051205080](https://ws1.sinaimg.cn/large/006tNc79gy1g2e5fivb5ej314q0fomym.jpg)
 
 - 자유도
   - 통계량 계산에 사용되는 관측 데이터(변수) 중, 자유롭게 값을 취할 수 있는 데이터의 수
   - 표본 크기에서 제약 조건의 수를 뺀 값이 자유도의 크기
   - 제약 조건의 수는 표본 데이터를 사용한 계산식의 수
 
-![image-20190420051222990](/Users/kimdabin/db/git-dir/TIL/statistics/img/image-20190420051222990.png)
+![image-20190420051222990](https://ws4.sinaimg.cn/large/006tNc79gy1g2e5fhqpfoj314q0lc40m.jpg)
 
 #### t분포의 특성
 
@@ -149,5 +145,7 @@ typora-copy-images-to: ./img
 - 실제 두 모집의 평균이 같아도 표집오차 때문에 두 표본의 평균은 차이를 갖음
 - 두 집단의 평균에 대해 추론하기 위해서는 두 표본의 평균 차이에 대한 표집분포를 알아야함
 
-![image-20190425003408300](img/image-20190425003408300.png)
+  ![006tNc79gy1g2e5fgsdbvj30bk0aadgb](https://ws1.sinaimg.cn/large/006tNc79gy1g2e5fgsdbvj30bk0aadgb.jpg)
+
+
 
