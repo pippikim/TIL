@@ -149,4 +149,5 @@ typora-copy-images-to: ./img
 - 실제 두 모집의 평균이 같아도 표집오차 때문에 두 표본의 평균은 차이를 갖음
 - 두 집단의 평균에 대해 추론하기 위해서는 두 표본의 평균 차이에 대한 표집분포를 알아야함
 
-![image-20190425001715424](/Users/kimdabin/db/git-dir/TIL/statistics/img/image-20190425001715424.png)
+![image-20190425003408300](img/image-20190425003408300.png)
+
