@@ -1,5 +1,5 @@
 ---
-typora-copy-images-to: ipic
+typora-copy-images-to: ./ipic
 ---
 
 ## 정규모집단의 평균추론
@@ -142,10 +142,12 @@ typora-copy-images-to: ipic
 ##### 표본평균을 이용한 모집평균의 비교
 
 - 두 모집의 모평균이 동일한지 판단하기 위해서는 각 모집의 표본에서 계산된 평균값을 비교
+
 - 실제 두 모집의 평균이 같아도 표집오차 때문에 두 표본의 평균은 차이를 갖음
+
 - 두 집단의 평균에 대해 추론하기 위해서는 두 표본의 평균 차이에 대한 표집분포를 알아야함
 
-  ![006tNc79gy1g2e5fgsdbvj30bk0aadgb](https://ws1.sinaimg.cn/large/006tNc79gy1g2e5fgsdbvj30bk0aadgb.jpg)
+  ![image-20190425155501338](ipic/image-20190425155501338.png)
 
 
 
