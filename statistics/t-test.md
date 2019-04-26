@@ -145,17 +145,153 @@ typora-copy-images-to: ./img
 
 - 실제 두 모집의 평균이 같아도 표집오차 때문에 두 표본의 평균은 차이를 갖음
 
-- 두 집단의 평균에 대해 추론하기 위해서는 두 표본의 평균 차이에 대한 표집분포를 알아야함
+- 두 집단의 평균에 대해 추론하기 위해서는 두 표본 평균 차이의 표집분포를 알아야함
 
   ![image-20190425172552730](./img/image-20190425172552730.png)
   
   
 
+### 표본평균 차이의 표집분포
+
+#### 표본평균 차이의 표집분포의 특성
+
+- 두 표본평균 차이의 표집분포의 평균은 모집 평균 차이와 같음
+  $$
+  \overline X_1 - \overline X_2
+  $$
+  
+
+- 두 표본평균 차이의 표집분포의 분산은 각 집단의 평균의 표집분포의 분산(표준오차)을 더해준 값과 같음
+  $$
+  \sqrt{\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}}
+  $$
+
+- 두 모집이 정규분포를 따르거나/ 각 집단의 표본의 크기가 모두 충분히 크다면 평균차이의 표집분포도 정규분포를 따른다고 볼수 있음
+
+$$
+\overline X_1 - \overline X_2 \sim N\left(\mu_1 - \mu_2, \frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}\right)
+$$
+
+$$
+\frac{\overline X_1 - \overline X_2}{\sqrt{\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}}} \sim N\left(0,1\right)
+$$
 
 
 
+#### 모집의 분산(표준편차)을 추정해야 할 때
+
+1. 두 모집의 분산이 다른 경우
+   $$
+   \overline X_1 - \overline X_2 \sim N\left(\mu_1 - \mu_2, \frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}\right)
+   $$
+
+   $$
+   \frac{\overline X_1 - \overline X_2 -(\mu_1-\mu_2)}{\sqrt{\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2}}} \sim t\left(n_1+n_2-2\right)
+   $$
+
+   
+
+2. 두 모집의 분산이 동일한 경우(공통분산)
+   $$
+   \overline X_1 - \overline X_2 \sim N\left(\mu_1 - \mu_2, \frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}\right)
+   $$
+
+   $$
+   \frac{\overline X_1 - \overline X_2 -(\mu_1-\mu_2)}{\sqrt{\frac{s^2_p}{n_1}+\frac{s^2_p}{n_2}}} \sim t\left(n_1+n_2-2\right)
+   $$
+
+3. 
+
+$$
+s_{p}^2 = \frac{\left(n_1 - 1 \right)s_1^2 + \left(n_2 - 1 \right)s_2^2}{n_1+n_2-2}
+$$
+
+### 두 모집평균차의 추정
+
+#### 두 모집평균차의 점 추정
+
+- 추정값
+  $$
+  \overline X_1 - \overline X_2
+  $$
 
 
 
+- 추정의 표준오차
+  $$
+  \sqrt{\frac{s_p^2}{n_1}+\frac{s_p^2}{n_2}}= s_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}
+  $$
 
 
+
+#### 두 모집평균차의 구간추정
+
+- $$100(1-\alpha)$$% 신뢰구간
+  $$
+  \left(\overline X_1 - \overline X_2 \right) \pm t_{\alpha/2}\left(df\right) \times SE_{\overline X_1 - \overline X_2}
+  $$
+
+  $$
+  \left(\overline X_1 - \overline X_2 \right) \pm t_{\alpha/2}\left(n_1+n_2-2\right) \times s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}}
+  $$
+
+  
+
+### 두 모집평균차의 가설검증
+
+#### t 검정을 이용한 평균 비교의 과정
+
+1. 영가설 설정
+   1. 두 집단의 평균의 차이가 없다
+   2. $$ H_0 : \mu_1 - \mu_2 = 0 $$
+2. 각 표본의 평균 및 그 차이 계산
+   1. $$\overline X_1 - \overline X_2$$
+3. 검정통계량(t 값) 계산 
+   1. $$ H_0 : \mu_1 - \mu_2 = 0 $$ 이라고 가정함 
+   2. $$\frac{(\overline X_1 - \overline X_2) -(\mu_1-\mu_2 ) }{SE_{\overline X_1 - \overline X_2}} = \frac{\overline X_1 - \overline X_2}{SE_{\overline X_1 - \overline X_2}}$$
+4. 검정통계량의 분포설정
+   1. 집단이 두 개
+   2. $$(n_1-1)+(n_2-1)$$ 
+   3. $$t=  \frac{\overline X_1 - \overline X_2}{SE_{\overline X_1 - \overline X_2}} \sim t(n_1+n_2-2)$$
+5. 유의수준 설정 
+   1. &alpha; = .05 또는 &alpha; = .01
+6. 기각값 계산 (t 분포표 참조)
+   1. 양방향 검증: $$t_{a/2}(n_1+n_2-2)$$
+   2. 단방향 검증 : $$t_{a}(n_1+n_2-2)$$
+7. 검정통계량과 기각값을 비교 
+   1. 양방향 검증 : $$|t|>t_{\alpha/2}(n_1+n_2-2) \to 영가설 기각$$
+   2. 단방향 검증 : $$|t|>t_{\alpha}(n_1+n_2-2) \to 영가설 기각$$
+8. t 검정 프로그램을 사용하는 경우 컴퓨터가 유 의확률을 계산해 주므로 유의확률이 유의수준 보다 낮으면 영가설을 기각, 높으면 영가설 채택
+
+
+
+### 짝비교
+
+#### t검정(t 분포를 이용한 검정)을 이용한 평균의 비교
+
+- 독립 t 검정: 두 개의 독립적인 집단의 평균 차이에 대한 추론에 사용
+  - 예) it 직업 종사자 집단/ 무역 직업 종사자 집단
+- 대응 t 검정(짝비교): 두 개의 관련된 집단의 평균 차이에 대한 추론에 사용
+  - 예) 신약 복용 전 / 신약 복용 후
+
+#### 짝비교의 과정
+
+- 짝을 이루는 두 모집의 차이 점수 평균($$\delta = \mu_1 - \mu_2$$)에 대해 추론
+- 표본에서 짝을 이루는 두 점수의 차이점수($$D=X_1-X_2$$)를 계산한 후 그 평균 ($$\overline D$$)으로 모집의 차이점수 평균에 대해 점추정, 구간추정, 가설검증을 수행
+
+#### 표본평균 차이의 표집분포의 특성
+
+- 다음의 조건일 때, 점수 차이의 평균의 표집분포도 정규분포를 따름
+
+  - 두 모집이 정규분포를 따를 때
+  - 표본의 크기가 모두 충분히 클 때
+
+- $$\overline D \sim N\left(\delta, \frac{\sigma_D^2}{n} \right)$$
+
+- $$\frac{\overline D - \delta }{\sigma_D \over \sqrt n } \sim N(0,1)$$
+
+- 하나의 집단이므로 df = n-1
+  $$
+  \frac{\overline D - \delta}{s_D \over \sqrt n} \sim t(n-1)
+  $$
+  
