@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Doughnut Chart</title>
+  <title>Chart</title>
   <script
   src="https://code.jquery.com/jquery-3.4.1.slim.js"
   integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
@@ -20,12 +20,14 @@
       list-style: none;
       margin: 0 auto;
       padding: 0;
+      font-size: 24px;
+      text-align: center;
     }
     .chart{
       width: 654px;
-      height: 327px;
+      height: 360px;
       background-color: #F5F5F5 ;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
 
     }
   </style>
@@ -34,6 +36,7 @@
   <div class="aux">
    <ul id="chartList" >
      <li class="chart">
+
       <canvas id="line" width="100" height="50"></canvas>
     </li><!--// .chart--> 
     <script type="text/javascript">
@@ -61,6 +64,11 @@
         },
 
     options: { //차트 옵션 - 애니메이션, 레이아웃, 차트제목, 툴팁, 스케일(범위) 등 차트를 구성하는 요소들에 대한 부가설정 가능
+     title:{ //차트 제목 설정
+      display: true, 
+      text: "Line Chart",
+      fontSize: 26
+    },
       scales : { //범위에 대한 설정
         yAxes: [{ //y축의 스케일
           ticks:{// 축상의 위치 표시 기준을 설정
@@ -78,6 +86,7 @@
 </script>   
 
 <li class="chart">
+
   <canvas id="bar" width="100" height="50"></canvas>
 </li><!--// .chart--> 
 <script type="text/javascript" > 
@@ -102,10 +111,15 @@
           var barChartDataArr = barData.datasets[0].data; //데이터 배열
           var barChartYMax = Math.max.apply(null,barChartDataArr)+1; //가장 큰 데이터 값에 1을 더해서 max 값 조정
           var barOptions = {
-            scales :{
-              yAxes: [{
-                ticks : {
-                  beginAtZero: true,
+           title:{
+            display: true,
+            text: "Bar Chart",
+            fontSize: 26
+          },
+          scales :{
+            yAxes: [{
+              ticks : {
+                beginAtZero: true,
                   suggestedMax : barChartYMax //suggestedMax - max 값을 축 비율에 맞게 설정해줌 
 
                 }
@@ -130,7 +144,7 @@
 </script>
 
 <li class="chart">
-  <canvas id="doughnut" width="100" height="50"></canvas>
+ <canvas id="doughnut" width="100" height="50"></canvas>
 
 </li><!--// .chart--> 
 
@@ -155,6 +169,11 @@
     type: 'doughnut',
     data: doughnutData,
     options: {
+     title:{
+      display: true,
+      text: "Doughnut Chart",
+      fontSize: 26
+    },
       cutoutPercentage : 60, // 도넛 가운데 구멍 크기(50은 기본 0은 꽉 막힘)
       rotation : 0.5 * Math.PI, // 시작 각도 변경 (기본: -0.5 * Math.PI) 
       animation: {animateScale: true , animateRotate: true}// 차트 나타날 때 애니메이션 
@@ -165,7 +184,7 @@
 </script>
 
 <li class="chart">
-  <canvas id="radar" width="100" height="50"></canvas>
+ <canvas id="radar" width="100" height="50"></canvas>
 </li><!--// .chart--> 
 <script>
 
@@ -203,6 +222,11 @@
   var start  = 0;
 
   var radarOptions =  {
+   title:{
+      display: true,
+      text: "Radar Chart",
+      fontSize: 26
+     },
    scale: {
     gridLines :{ //그리드 설정
       color: "#9E9E9E",
@@ -224,14 +248,14 @@
       tension:0, // 베지어 곡선 설정
       borderWidth:3 
     }},
-  tooltips: {
+    tooltips: {
 
-    titleFontSize: 10,
-    backgroundColor: 'rgba(189,189,189,  0.9)',
-    titleFontStyle: 'normal',
-    bodyFontSize: 13,
-    callbacks: { 
-      label : function(tooltipItem, data){ 
+      titleFontSize: 10,
+      backgroundColor: 'rgba(189,189,189,  0.9)',
+      titleFontStyle: 'normal',
+      bodyFontSize: 13,
+      callbacks: { 
+        label : function(tooltipItem, data){ 
        var label = data.datasets[tooltipItem.datasetIndex].label; //데이터 라벨 
 
        if (label) {
@@ -239,10 +263,10 @@
       }
       label += tooltipItem.yLabel; //라벨에 데이터 값을 붙임 
      // console.log(data.datasets[tooltipItem.datasetIndex].label);
-      return label;
-    }
+     return label;
+   }
 
-  }
+ }
 }
 
   }//options end
@@ -253,7 +277,7 @@
     options: radarOptions
 
   });//radarChart end 
- 
+
 
 </script>
 
