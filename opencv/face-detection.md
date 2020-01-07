@@ -1,6 +1,6 @@
 # 얼굴을 탐지하고 모자 씌우기 
 
-![output](./img/output.avi)
+![output](./img/output.gif)
 
 
 
