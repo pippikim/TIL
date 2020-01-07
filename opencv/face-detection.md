@@ -1,6 +1,6 @@
 # 얼굴을 탐지하고 모자 씌우기 
 
-![output](./img/output.gif)
+![output](./img/output.avi)
 
 
 
@@ -25,19 +25,16 @@
 using namespace std;
 using namespace cv;
 
-//VideoCapture vcap("/Users/kimdabin/db/workspace/opencv/face-detection/face-detection/face.MP4");
+//모자 이미지
+   Mat hatImg = imread("../face-detection/hat_img2.png");
+//얼굴 학습된 xml
+   CascadeClassifier face_classifier("../face-detection/haarcascade_frontalface_default.xml");
+//눈 학습된 xml
+CascadeClassifier eye_classifier("../face-detection/haarcascade_eye.xml");
 
 
-   Mat hatImg = imread("/Users/kimdabin/db/workspace/opencv/face-detection/face-detection/hat_img2.png");
-   CascadeClassifier face_classifier("/Users/kimdabin/db/workspace/opencv/face-detection/face-detection/haarcascade_frontalface_default.xml");
 
-CascadeClassifier eye_classifier("/Users/kimdabin/db/workspace/opencv/face-detection/face-detection/haarcascade_eye.xml");
-
-
-
-int main(int argc, const char * argv[]) {
-    // insert code here...
-   
+int main(int argc, const char * argv[]) {   
     VideoCapture vcap(0);
     VideoWriter writer;
     
@@ -45,13 +42,7 @@ int main(int argc, const char * argv[]) {
                   cerr<< "xml load failed" <<endl;
                         return -1;
               }
-  
-      
-       
-      
-      //
-       
-     
+
        if(!vcap.isOpened()){
            return -1;
        }
@@ -59,7 +50,7 @@ int main(int argc, const char * argv[]) {
        namedWindow("video",1);
     Size size = Size((int)vcap.get(CAP_PROP_FRAME_WIDTH),
     (int)vcap.get(CAP_PROP_FRAME_HEIGHT));
-       writer.open("output.avi", VideoWriter::fourcc('M', 'J', 'P', 'G'), 30.0, size, true);
+       writer.open("output.avi", VideoWriter::fourcc('M', 'J', 'P', 'G'), 10.0, size, true);
        
        while(1){//vcap.read(src)
            Mat src, gray, binary, hatGray, hatROI;
@@ -119,11 +110,7 @@ int main(int argc, const char * argv[]) {
                     }
                     
      
-                                
-                            
-                                      //Point center( (realEye.x+realEye.width) / 2, (realEye.y + realEye.height) / 2 );
-                                                    
-                                       //  circle(faceColor, center, realEye.width / 2 , Scalar(255, 0 , 0), 2, LINE_AA);
+
                                                    
                 }
                
@@ -133,7 +120,7 @@ int main(int argc, const char * argv[]) {
                                              
                     Rect roi(realFace.x,abs((realFace.y)-h),faceROI.cols , h) ;
                     hatROI = src(roi);
-                  // rectangle(src, roi, Scalar(255,255,255), 1);
+         
                    resize(mask, mask,Size(faceROI.cols,h),INTER_NEAREST );
                    resize(hatImg, hatImg,Size(faceROI.cols,h),INTER_NEAREST );
                    hatImg.copyTo(hatROI,mask);
@@ -153,7 +140,7 @@ int main(int argc, const char * argv[]) {
             if( waitKey(33)==27){ //esc 키 누르면 종료
                 return -1;
             }
-            //hatImg.copyTo(hatROI,mask);
+            
            writer.write(src);
            imshow("video", src);
            
