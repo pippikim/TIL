@@ -286,7 +286,7 @@ $$
   - 두 모집이 정규분포를 따를 때
   - 표본의 크기가 모두 충분히 클 때
 
-- $$\overline D \sim N\left(\delta, \frac{\sigma_D^2}{n} \right)$$
+- $$\overline D \sim N\left(\delta, \frac{\sigma_{D}^2}{n} \right)$$
 
 - $$\frac{\overline D - \delta }{\sigma_D \over \sqrt n } \sim N(0,1)$$
 
@@ -295,3 +295,24 @@ $$
   \frac{\overline D - \delta}{s_D \over \sqrt n} \sim t(n-1)
   $$
   
+
+#### 모집 차이점수 평균에 대한 구간 추정
+
+- $$100(1-\alpha)$$% 신뢰구간
+
+- $$\overline D \pm t_{\alpha/2}(df)\times SE_{\overline D}$$
+
+  - $$\overline D \pm t_{\alpha/2}(n-1)\times \frac{s_D}{\sqrt n}$$
+
+    
+
+#### 평균의 차이점수에 대한 가설 검증
+
+- 영가설 설정: 두 집단의 평균은 차이가 없다
+  - $$H_{0}: \delta = \mu_1 - \mu_2 = 0$$ 
+- 차이점수의 평균 및 분산 계산
+  - $$\overline D = \frac{1}{n} \sum D_i$$
+  - $$s_D^2 = \frac{\sum \left(D_i - \overline D \right)^2 }{n-1}$$
+- 검정통계량 계산
+  - $$\frac{\overline D - \delta}{s_{D} \over \sqrt n} = \frac {\overline D }{s_{D} \over \sqrt n } \sim t(n-1)$$
+
