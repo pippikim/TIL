@@ -32,14 +32,14 @@ typora-copy-images-to: ./img
 
 #### 표준정규분포와 스튜던트 t 분포
 
-![image-20190420051205080](./img/image-20190420051205080.png)
+![image-20190420051205080](https://tva1.sinaimg.cn/large/0082zybpgy1gbqj3gmpfjj314q0fojt9.jpg)
 
 - 자유도
   - 통계량 계산에 사용되는 관측 데이터(변수) 중, 자유롭게 값을 취할 수 있는 데이터의 수
   - 표본 크기에서 제약 조건의 수를 뺀 값이 자유도의 크기
   - 제약 조건의 수는 표본 데이터를 사용한 계산식의 수
 
-![image-20190420051222990](./img/image-20190420051222990.png)
+![image-20190420051222990](https://tva1.sinaimg.cn/large/0082zybpgy1gbqj3tl15bj314q0lcgrr.jpg)
 
 #### t분포의 특성
 
@@ -147,7 +147,7 @@ typora-copy-images-to: ./img
 
 - 두 집단의 평균에 대해 추론하기 위해서는 두 표본 평균 차이의 표집분포를 알아야함
 
-  ![image-20190425172552730](./img/image-20190425172552730.png)
+  ![image-20190425172552730](https://tva1.sinaimg.cn/large/0082zybpgy1gbqj413il4j30bk0aaq3o.jpg)
   
   
 
@@ -160,7 +160,6 @@ typora-copy-images-to: ./img
   \overline X_1 - \overline X_2
   $$
   
-
 - 두 표본평균 차이의 표집분포의 분산은 각 집단의 평균의 표집분포의 분산(표준오차)을 더해준 값과 같음
   $$
   \sqrt{\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}}
