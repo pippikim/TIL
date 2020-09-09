@@ -12,7 +12,7 @@
 
 ### 집약형 아키텍처
 
-![image-20200210015302777](https://tva1.sinaimg.cn/large/0082zybpgy1gbqmw7m60bj318n0rs7eq.jpg)
+<img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbqmw7m60bj318n0rs7eq.jpg" alt="image-20200210015302777" style="zoom:33%;" /> 
 
 - 대형 컴퓨터 하나로 모든 업무를 처리하는 형태
 - 구성이 간단함 
@@ -27,7 +27,7 @@
 
 ### 분할형 아키텍처 
 
-![image-20200210015514346](https://tva1.sinaimg.cn/large/0082zybpgy1gbqmyn2wgoj31870rs14r.jpg)
+<img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbqmyn2wgoj31870rs14r.jpg" alt="image-20200210015514346" style="zoom:33%;" /> 
 
 - 여러대의 (소형)컴퓨터를 조합해서 하나의 시스템을 구축하는 구조 
 - 안정성은 대형 컴퓨터 보다 낮으나, 여러 대의 컴퓨터를 이용해 한 대가 고장이 나도 안정성을 보장
@@ -64,7 +64,7 @@
 
 ### 클라이언트- 서버형 아키텍처 
 
-![image-20200210021411184](https://tva1.sinaimg.cn/large/0082zybpgy1gbqnigog2ej31ig0rsngg.jpg)
+<img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbqnigog2ej31ig0rsngg.jpg" alt="image-20200210021411184" style="zoom:33%;" /> 
 
 - 업무 애플리케이션, 미들웨어, 데이터베이스 등의 소프트웨어를 **물리 서버** 상에서 운영
 - **클라이언트(단말)** 가 접속해서 이용하는 형태 
@@ -81,7 +81,7 @@
 
 ### 3계층형 아키텍처
 
-![image-20200210012934668](https://tva1.sinaimg.cn/large/0082zybpgy1gbqm7t3lg7j32620rsb0e.jpg)
+<img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbqm7t3lg7j32620rsb0e.jpg" alt="image-20200210012934668" style="zoom:33%;" />
 
 - 프리젠테이션 계층, 애플리케이션 계층, 데이터 계층 -> 3층 구조로 서버가 분할되어 있음 
 - 사용자가 웹 브라우저를 통해 시스템에 접속함 

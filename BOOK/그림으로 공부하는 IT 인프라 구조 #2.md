@@ -4,11 +4,9 @@ typora-root-url: ./img/image-20200214010726062.png
 
 [TOC]
 
-
-
 # 서버 - 하드웨어 장비 및 데이터의 흐름
 
-![image-20200214062303504](https://tva1.sinaimg.cn/large/0082zybpgy1gbvh6eeyraj30wb0rs4dl.jpg)
+<img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbvh6eeyraj30wb0rs4dl.jpg" alt="image-20200214062303504" style="zoom:50%;" /> 
 
 
 
@@ -49,7 +47,7 @@ typora-root-url: ./img/image-20200214010726062.png
 
 ### 서버 내부 구성
 
-![image-20200214014235715](https://tva1.sinaimg.cn/large/0082zybpgy1gbvh98f7wnj30td0rsjvr.jpg)
+<img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbvh98f7wnj30td0rsjvr.jpg" alt="image-20200214014235715" style="zoom:50%;" /> 
 
 - FAN 뒤에는 HDD가 있음
 - PC 부품과 같은 종류가 들어가 있음
@@ -73,7 +71,7 @@ typora-root-url: ./img/image-20200214010726062.png
 - CPU를 **코어** 라고 하며, 하나의 CPU에 여러개의 **코어**가 존재하는 멀티 코어화가 진행되고 있음
 - 코어는 각자가 독립된 처리 가능
 
-<img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbvh921wbjj30xm0rswob.jpg" alt="image-20200214024232877" style="zoom:67%;" />
+<img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbvh921wbjj30xm0rswob.jpg" alt="image-20200214024232877" style="zoom: 33%;" /> 
 
 - 명령이나 데이터는 기억 장치(메모리, HDD)에 있음
 - 운영체제(OS)라는 소프트웨어에서 CPU에 명령을 내림
@@ -103,7 +101,7 @@ typora-root-url: ./img/image-20200214010726062.png
 
 - 캐시를 여러 단으로 배치해서 대기 시간을 줄임
 
-  ![image-20200214031717935](https://tva1.sinaimg.cn/large/0082zybpgy1gbvh8mmmtpj31240rs4ef.jpg)
+  <img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbvh8mmmtpj31240rs4ef.jpg" alt="image-20200214031717935" style="zoom:33%;" /> 
 
 - L1, L2 캐시에 있는 데이터가 L3 캐시에도 존재함
 
@@ -121,7 +119,7 @@ typora-root-url: ./img/image-20200214010726062.png
 
 - **메모리 인터리빙(memory Interleaving)** - 데이터를 미리 CPU에 전달해서 처리 지연을 줄이는 메모리 기능
 
-  ![image-20200214041358075](https://tva1.sinaimg.cn/large/0082zybpgy1gbvh8h4b6zj31660rsx2z.jpg)
+  <img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbvh8h4b6zj31660rsx2z.jpg" alt="image-20200214041358075" style="zoom:33%;" /> 
 
   - 채널 : CPU와 메모리 간의 데이터 경로 
   - 뱅크 : 하나의 채널 안에서 하나 또는 그 이상의 메모리 묶음
