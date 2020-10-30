@@ -32,9 +32,10 @@ numbers	return
 
 ## 문제 접근
 
-<img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc6s2g0vbij31jg0rs1ed.jpg" alt="image-20200224010106063" style="zoom:33%;" />
+<img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc6s2g0vbij31jg0rs1ed.jpg" alt="image-20200224010106063" style="zoom:33%;" /> 
 
-
+- 3, 30, 34, 5, 9 => 여기서 303(30+3)보다 330(3+30)이 더 큰것을 알기위해, compareTo 메서드를 오버라이드 해서 사용함
+  - (3+30).compareTo(30+3) 
 
 ## 소스
 
@@ -72,4 +73,5 @@ class Solution {
 
 - numbers 배열의 원소에서 34 와 9 를 비교할 때 사전 순(34<9)으로 정렬을 하기 위하여 문자열 배열로 변환해 sort 
 - Arrays.sort는 오름차순으로 정렬이 되기 때문에, Comparable를 구현해 내림차순으로 정렬 
+  - o2.compareTo(o1)//내림차순
 - 메모리 효용성을 위해 Stringbuffer로 정렬된 output 배열의 원소를 append
