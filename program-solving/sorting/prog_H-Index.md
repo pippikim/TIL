@@ -4,6 +4,12 @@
 
 - [문제링크](https://programmers.co.kr/learn/courses/30/lessons/42747)
 
+
+
+### 문제접근
+
+- **함정** {10, 100} 일 경우, H-index는 0 이 아니라, 2!
+
 ## 소스
 
 ```java
