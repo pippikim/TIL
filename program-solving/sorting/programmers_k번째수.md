@@ -46,16 +46,22 @@ array	commands	return
 ```java
 import java.util.*;
 class Solution {
+    
+    public static int getK(int[] arr, int kidx){
+         Arrays.sort(arr);
+        return arr[ kidx-1]; 
+    }
+    
     public int[] solution(int[] array, int[][] commands) {
         int[] answer = new int[commands.length];
         int idx = 0;
-        for(int[] command:commands ){
-            int[] tmp = Arrays.copyOfRange(array,(command[0]-1),command[1]);
-            Arrays.sort(tmp);
-            answer[idx]=tmp[command[2]-1];
+        for(int[] command: commands){
+            int i = command[0];
+            int j = command[1];
+            int k = command[2];
+            answer[idx] = getK(Arrays.copyOfRange(array,i-1,j),k);
             idx++;
         }
-        
         return answer;
     }
 }
