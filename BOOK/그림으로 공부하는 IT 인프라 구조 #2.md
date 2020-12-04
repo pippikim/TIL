@@ -140,7 +140,7 @@ typora-root-url: ./img/image-20200214010726062.png
 
 - HDD 내부
 
-  <img src="https://it.donga.com/files/2011/04/26/00.jpg" alt="íëëì¤í¬, âì©ëâ ë§ì´ ì ë¶ê° ìëë¤? (/../../00-20200214042702626.jpg)" style="zoom:50%;" />
+  <img src="http://library.gabia.com/wp-content/uploads/2016/03/%EB%94%94%EC%8A%A4%ED%81%AC.png" /> 
 
   
 
